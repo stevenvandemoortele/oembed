@@ -84,6 +84,9 @@ class OembedService extends Component
         try {
             array_multisort($options);
 
+            $url = str_replace("https://www.vimeo.com/", "https://player.vimeo.com/video/", $url);
+            $url = str_replace("https://vimeo.com/", "https://player.vimeo.com/video/", $url);
+
             $embed = new Embed();
             $infos = $embed
                 ->get($url)
